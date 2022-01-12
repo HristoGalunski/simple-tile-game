@@ -36,6 +36,7 @@ class Tile():
     def draw_tile(tile):
         screen.blit(tile.image, (tile.x, tile.y))
 
+    #removes tile from board_tiles array and adds it to player.hand
     def add_to_hand(tile):
         if tile.in_hand == False:
             player.hand.append(tile)
@@ -60,6 +61,7 @@ class Tile():
             pygame.quit()
             sys.exit()
 
+    #adds all the tiles to a 2D array depending on which floor they are on
     def assign_top_tiles():
         tiles_by_floor = []
         for tile in board_state.board_tiles:
